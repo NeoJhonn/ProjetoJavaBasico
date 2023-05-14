@@ -3,36 +3,86 @@ import entities.Student;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
         var allStudents = StudentsBuilder.getAllStudents();
+        Scanner tec = new Scanner(System.in);
+        int option = 0;
+
+        while (option != 8) {
+            System.out.println(
+                    "Digite uma opção:" + "\n" +
+                            "1. Listar os alunos que passaram de ano (nota minima 7.0)." + "\n" +
+                            "2. Listar os alunos que não passaram de ano." + "\n" +
+                            "3. Listar os alunos que tiraram a nota máxima (nota 10)." + "\n" +
+                            "4. Mostar o aluno que tirou a menor nota." + "\n" +
+                            "5. Listar top 3 notas de alunos." + "\n" +
+                            "6. Listar as 3 menores notas de alunos." + "\n" +
+                            "7. Listar a média de todos os alunos."+ "\n" +
+                            "8. Sair."
+            );
+            option = tec.nextInt();
+            switch (option) {
+                case 1:
+                    aprovedStudents(allStudents);
+                    break;
+                case 2:
+                    failedStudents(allStudents);
+                    break;
+
+                case 3:
+                    studentsWithMaxGrade(allStudents);
+                    break;
+
+                case 4:
+                    studentsWithLowestGrade(allStudents);
+                    break;
+
+                case 5:
+                    topTreeGradesOfTheStudents(allStudents);
+                    break;
+
+                case 6:
+                    threeLowestGrades(allStudents);
+                    break;
+
+                case 7:
+                    averageOfAllStudents(allStudents);
+                    break;
+                case 8:
+                    break;//sair do laço
+                default:
+                    System.out.println("Digite uma opção válida."+ "\n");
+            }
+        }
 
         // Agora vamos as atividades
         /*
         1. Recupere da lista os alunos que passaram de ano (nota minima 7.0).
             - Exiba os dados nesse formato: <código> - <nome> : Média = <nota>
         */
-        aprovedStudents(allStudents);
+        //aprovedStudents(allStudents);
 
         /*
         2. Recupere da lista os alunos que não passaram de ano.
             - Exiba os dados nesse formato: <código> - <nome> : Média = <media> (Faltou = <nota_faltante>)
         */
-        failedStudents(allStudents);
+        //failedStudents(allStudents);
 
         /*
         3. Traga os alunos que tiraram a nota máxima (nota 10).
             - Exiba os dados nesse formato: <código> - <nome>
         */
-        studentsWithMaxGrade(allStudents);
+        //studentsWithMaxGrade(allStudents);
 
         /*
         4. Traga o aluno que tirou a menor nota, em caso de notas iguais, traga ambos os alunos.
             - Exiba os dados nesse formato: <código> - <nome> : Nota = <nota>
         */
-        studentsWithLowestGrade(allStudents);
+        //studentsWithLowestGrade(allStudents);
 
         /*
         5. Faça uma lista com top 3 notas de alunos. Em caso de notas iguais coloque todos na mesma posição.
@@ -43,19 +93,19 @@ public class Main {
                 3º - Mariazinha : Nota = 8.9;
             - Exiba os dados nesse formato: <posicao> - <nome> : Nota = <nota>
         */
-        topTreeGradesOfTheStudents(allStudents);
+        //topTreeGradesOfTheStudents(allStudents);
 
         /*
         6. Faça uma lista com as 3 menores notas de alunos. Em caso de notas iguais coloque todos na mesma posição. Exemplo igual a anterior
             - Exiba os dados nesse formato: <posicao> - <nome> : Nota = <nota>
         */
-        threeLowestGrades(allStudents);
+        //threeLowestGrades(allStudents);
 
         /*
         7. Monte a média de todos os alunos e exiba em tela ordenando da maior para a menor nota.
             - Exiba os dados nesse formato: <posicao> - <código> - <nome> : Média = <nota>
          */
-        averageOfAllStudents(allStudents);
+        //averageOfAllStudents(allStudents);
     }
 
     public static void aprovedStudents(List<Student> students){
