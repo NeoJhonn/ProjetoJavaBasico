@@ -14,15 +14,15 @@ public class Main {
 
         while (option != 8) {
             System.out.println(
-                    "Digite uma opção:" + "\n" +
-                            "1. Listar os alunos que passaram de ano (nota minima 7.0)." + "\n" +
-                            "2. Listar os alunos que não passaram de ano." + "\n" +
-                            "3. Listar os alunos que tiraram a nota máxima (nota 10)." + "\n" +
-                            "4. Mostar o aluno que tirou a menor nota." + "\n" +
-                            "5. Listar top 3 notas de alunos." + "\n" +
-                            "6. Listar as 3 menores notas de alunos." + "\n" +
-                            "7. Listar a média de todos os alunos."+ "\n" +
-                            "8. Sair."
+                "Digite uma opção:" + "\n" +
+                "1. Listar os alunos que passaram de ano (nota minima 7.0)." + "\n" +
+                "2. Listar os alunos que não passaram de ano." + "\n" +
+                "3. Listar os alunos que tiraram a nota máxima (nota 10)." + "\n" +
+                "4. Mostar o aluno que tirou a menor nota." + "\n" +
+                "5. Listar top 3 notas de alunos." + "\n" +
+                "6. Listar as 3 menores notas de alunos." + "\n" +
+                "7. Listar a média de todos os alunos."+ "\n" +
+                "8. Sair."
             );
             option = tec.nextInt();
             switch (option) {
